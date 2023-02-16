@@ -1,1 +1,0 @@
-# samsung-desarrolladoras-front-lab
