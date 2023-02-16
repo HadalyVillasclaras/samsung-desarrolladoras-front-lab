@@ -12,19 +12,27 @@
 		<h2>Create Account</h2>
 		<form>
 			<label for="nombre">Nombre</label>
-			<input type="text" id="name" name="nombre">
+			<div class="input-container">
+				<input type="text" id="name" name="nombre">
+			</div>
 			<span id="nameMsg" class="errMsg"></span>
 
 			<label for="email">Email</label>
-			<input type="email" id="email" name="email">
+			<div class="input-container">
+				<input type="email" id="email" name="email">
+			</div>
 			<span id="emailMsg" class="errMsg"></span>
 			
 			<label for="clave">Clave</label>
-			<input type="password" id="pass" name="clave" maxlength="8">
+			<div class="input-container">
+				<input type="password" id="pass" name="clave">
+			</div>
 			<span id="passMsg" class="errMsg"></span>
 
 			<label for="confclave">Confirme su clave</label>
-			<input type="password" id="confPass" name="confclave">
+			<div class="input-container">
+				<input type="password" id="confPass" name="confclave">
+			</div>
 			<span id="confPassMsg" class="errMsg"></span>
 
 			<input type="submit" value="Enviar">
