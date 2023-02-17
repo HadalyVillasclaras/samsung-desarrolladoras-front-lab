@@ -28,11 +28,12 @@ function validateForm(event) {
         let inputClass = "errInput";
         let iconClass = "errIcon";
         let message = "";
+        let alertF = false;
 
         if(input.value == ""){
             iconClass= "errIcon";
             inputClass = "errInput";
-            message = "Por favor, complete este campo."
+            message = "Por favor, rellene este campo."
         } else if(input.id === "email" && !emailRegExp.test(input.value)) {
             iconClass= "errIcon";
             inputClass = "errInput";
@@ -49,9 +50,13 @@ function validateForm(event) {
             iconClass = "successIcon";
             inputClass = "successInput";
             message = "";
+            alert = true;
+
         }
 
-        showValidation(input, message, iconClass, inputClass)
+        showValidation(input, message, iconClass, inputClass);
+
+        if(alertF) {alert("Formulario enviado satisfactoriamente")}
     })
 
 
