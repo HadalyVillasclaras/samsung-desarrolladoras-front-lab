@@ -1,45 +1,62 @@
 const form = document.querySelector("form");
 form.addEventListener("submit", validateForm);
 
-const name = document.getElementById("name");
-const email = document.getElementById("email");
-const password = document.getElementById("pass");
-const confPass = document.getElementById("confPass");
-
-function emptyValidation(input) {
+function showValidation(input, message, iconClass, inputClass) {
+    const icon = input.nextElementSibling;
     const inputMsg = input.id + 'Msg';
-    const element = document.getElementById(input.id);
     const elementMsg = document.getElementById(inputMsg);
-    const iconSpan = document.createElement("span");
-    const icon = element.parentNode.appendChild(iconSpan);
 
-    if (element.value == "") {
-        element.classList.add("errInput");
-        icon.classList.add("errIcon");
-        elementMsg.textContent = "Por favor, complete este campo.";
-        input.focus();
-    } else {
-        element.classList.add("successInput");
-        icon.classList.add("successIcon");
-        elementMsg.textContent = "";
-    }
+    input.className=inputClass;
+    icon.className = iconClass;
+    elementMsg.textContent = message;
+    input.focus();
 }
 
 function validateForm(event) {
     event.preventDefault();
-    
-    emptyValidation(name);
-    emptyValidation(email);
-    emptyValidation(password);
-    emptyValidation(confPass);
-    
-    if (password.value.length > 8) {
-        passMsg.textContent = "La clave no puede tener más de 8 caracteres.";
-        password.focus();
-    }
 
-    if (confPass.value !== password.value) {
-        confPassMsg.textContent = "Las claves no coinciden.";
-        confPass.focus();
-    }
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const password = document.getElementById("pass");
+    const confPass = document.getElementById("confPass");
+
+    const inputs = [name, email, password, confPass];
+
+    const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    inputs.map((input) => {
+        let inputClass = "errInput";
+        let iconClass = "errIcon";
+        let message = "";
+
+        if(input.value == ""){
+            iconClass= "errIcon";
+            inputClass = "errInput";
+            message = "Por favor, complete este campo."
+        } else if(input.id === "email" && !emailRegExp.test(input.value)) {
+            iconClass= "errIcon";
+            inputClass = "errInput";
+            message = "Por favor, introduce un email válido.";
+        } else if (input.id === "pass" && input.value.length > 8) {
+            iconClass= "errIcon";
+            inputClass = "errInput";
+            message = "La clave no puede tener más de 8 caracteres.";
+        } else if (input.id === 'confPass' && password.value !== confPass.value) {
+            iconClass= "errIcon";
+            inputClass = "errInput";
+            message =  "Las claves no coinciden.";
+        }else{
+            iconClass = "successIcon";
+            inputClass = "successInput";
+            message = "";
+        }
+
+        showValidation(input, message, iconClass, inputClass)
+    })
+
+
+    
+
+
 }
+
