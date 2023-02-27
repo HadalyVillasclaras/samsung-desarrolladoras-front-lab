@@ -22,9 +22,9 @@ section {
     border-radius: 10px;
     width: 350px;
     padding: 2rem;
-    
 }
 
+/*Form*/
 form {
     width: 100%;
 }
@@ -40,9 +40,10 @@ label{
 }
 input {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 2rem 1rem 1rem;
     border-radius: 2px;
     display: inline-block;
+    box-sizing: border-box;
 }
 
 input:focus{
@@ -56,6 +57,8 @@ input[type=submit]{
     color: white;
     border:2px solid #272f3b;
     text-transform: uppercase;
+    padding: 1rem 0;
+
 }
 
 input[type=submit]:hover {
@@ -70,6 +73,8 @@ input[type=reset]{
     color: #8c9cbb;
     border:2px solid #8c9cbb;
     text-transform: uppercase;
+    padding: 1rem 0;
+
 }
 
 input[type=reset]:hover {
@@ -84,12 +89,12 @@ input[type=reset]:hover {
     margin-bottom: 2rem;
 }
 
+/* Error / success control*/
 .errMsg {
     margin-top: .5rem;
     color: rgb(218, 72, 72);
     font-size: 90%;
 }
-
 
 .errInput {
     border: 2px solid rgb(218, 72, 72);
@@ -121,7 +126,6 @@ input[type=reset]:hover {
     top: 0;
     right: 0;
 }
-
 
 .aria-description {
     position: absolute;
