@@ -29,33 +29,59 @@ form {
     width: 100%;
 }
 
+legend {
+    margin-bottom: 2rem;
+
+}
+
 label{
-    margin: 1.8rem 0 0.5rem 0;
     display: block;
+    margin-bottom: 0.8rem;
 }
 input {
     width: 100%;
     padding: 1rem 0;
     border-radius: 2px;
     display: inline-block;
-
 }
+
+input:focus{
+    background-color:#c0bff1;
+    outline: 3px solid #2E1BA6;
+}
+
+
 input[type=submit]{
     background-color: #6d67f4;
     color: white;
     border:2px solid #272f3b;
-    margin-top: 1.8rem;
     text-transform: uppercase;
 }
 
 input[type=submit]:hover {
     background-color: #29257a;
     color: #6d67f4;
+    border:2px solid #6d67f4;
+    cursor: pointer;
+}
+
+input[type=reset]{
+    background-color: transparent;
+    color: #8c9cbb;
+    border:2px solid #8c9cbb;
+    text-transform: uppercase;
+}
+
+input[type=reset]:hover {
+    background-color: #29257a;
+    border:2px solid #6d67f4;
+    color: #6d67f4;
     cursor: pointer;
 }
 
 .input-container {
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .errMsg {
@@ -95,3 +121,27 @@ input[type=submit]:hover {
     top: 0;
     right: 0;
 }
+
+
+.aria-description {
+    position: absolute;
+    bottom: -100%;
+    left: 25%;
+    width: 50%;
+    border-radius: 3px;
+    display: none;
+    font-size: 0.8rem;
+    color: #29257a;
+    background-color: #8c9cbb;
+    padding: 0.5rem;
+}
+
+input[type=submit]:hover + #descriptionSend{
+    display: block;
+}
+
+#pass:hover + #descriptionEmail {
+    display: block;
+
+}
+
