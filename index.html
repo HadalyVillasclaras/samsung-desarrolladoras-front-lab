@@ -12,37 +12,43 @@
 		<form action="" method="post">
 			<fieldset>
 				<legend><h2>Create account</h2></legend>
-			
-				<label id="nameLabel" for="nombre">Name<span aria-label="required">*</span></label>
-				<p class="input-container">
-					<input type="text" id="name" name="nombre">
-				</p>
-				<span id="nameMsg" class="errMsg"></span>
+				<ul>
+					<li>
+						<label id="nameLabel" for="nombre">Name<span aria-label="required">*</span></label>
+						<p class="input-container">
+							<input type="text" id="name" name="nombre">
+						</p>
+						<span id="nameMsg" class="errMsg"></span>
+					</li>
+					<li>
+						<label id="emailLabel" for="email">Email<span aria-label="required">*</span></label>
+						<p class="input-container">
+							<input type="text" id="email" name="email">
+						</p>
+						<span id="emailMsg" class="errMsg"></span>
+					</li>
 
-				<label id="emailLabel" for="email">Email<span aria-label="required">*</span></label>
-				<p class="input-container">
-					<input type="text" id="email" name="email">
-				</p>
-				<span id="emailMsg" class="errMsg"></span>
-				
-				<label for="clave" >Password<span aria-label="required">*</span></label>
-				<p class="input-container">
-					<input type="password" id="pass" name="clave" class="icon">
-				</p>
-				<span id="passMsg" class="errMsg"></span>
+					<li>
+						<label for="clave" >Password<span aria-label="required">*</span></label>
+						<p class="input-container">
+							<input type="password" id="pass" name="clave" class="icon">
+						</p>
+						<span id="passMsg" class="errMsg"></span>
+					</li>
 
-				<label for="confclave">Repeat password<span aria-label="required">*</span></label>
-				<p class="input-container">
-					<input type="password" id="confPass" name="confclave">
-				</p>
-				<span id="confPassMsg" class="errMsg"></span>
+					<li>
+						<label for="confclave">Repeat password<span aria-label="required">*</span></label>
+						<p class="input-container">
+							<input type="password" id="confPass" name="confclave">
+						</p>
+						<span id="confPassMsg" class="errMsg"></span>
+					</li>
+				</ul>
+			</fieldset>
 
-				<p class="input-container">
-					<input type="submit" value="Send" aria-label="Send" aria-describedby="descriptionSend">
-					<span class="aria-description" id="descriptionSend">Sending this form will produce no effect as this is just a front-end interface.</span>
-				</p>
-				<input type="reset" value="Clear">
-		</fieldset>
+			<input type="submit" value="Send" aria-label="Send" aria-describedby="descriptionSend">
+			<span class="aria-description" id="descriptionSend">Sending this form will produce no effect as this is just a front-end interface.</span>
+			<input type="reset" value="Clear">
 		</form>
 	</section>
 

@@ -1,25 +1,6 @@
 const form = document.querySelector("form");
 form.addEventListener("submit", validateForm);
 
-function showValidation(input, message, err) {
-  let inputClass = err ? "errInput" : "successInput";
-  let iconClass = err ? "errIcon" : "successIcon";
-  const elementMsg = document.getElementById(input.id + "Msg");
-
-  if (input.nextElementSibling === null) {
-    let icon = document.createElement("span");
-    input.insertAdjacentElement("afterend", icon);
-  }
-
-  if (input.nextElementSibling) {
-    input.nextElementSibling.className = iconClass;
-  }
-
-  input.className = inputClass;
-  elementMsg.textContent = message;
-  input.focus();
-}
-
 function validateForm(event) {
   event.preventDefault();
   const emailRegExp =
@@ -56,4 +37,23 @@ function validateForm(event) {
       alert("Formulario enviado satisfactoriamente");
     }
   });
+}
+
+function showValidation(input, message, err) {
+  let inputClass = err ? "errInput" : "successInput";
+  let iconClass = err ? "errIcon" : "successIcon";
+  const elementMsg = document.getElementById(input.id + "Msg");
+
+  if (input.nextElementSibling === null) {
+    let icon = document.createElement("span");
+    input.insertAdjacentElement("afterend", icon);
+  }
+
+  if (input.nextElementSibling) {
+    input.nextElementSibling.className = iconClass;
+  }
+
+  input.className = inputClass;
+  elementMsg.textContent = message;
+  input.focus();
 }

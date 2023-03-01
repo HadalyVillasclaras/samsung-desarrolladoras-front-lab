@@ -29,15 +29,24 @@ form {
     width: 100%;
 }
 
-legend {
-    margin-bottom: 2rem;
-
+ul {
+    list-style: none;
 }
+
+li{
+    position: relative;
+}
+
+fieldset {
+    margin-bottom: 2rem;
+}
+
 
 label{
     display: block;
-    margin-bottom: 0.8rem;
+    margin: 2rem 0 0.4rem 0;
 }
+
 input {
     width: 100%;
     padding: 1rem 2rem 1rem 1rem;
@@ -86,7 +95,7 @@ input[type=reset]:hover {
 
 .input-container {
     position: relative;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 /* Error / success control*/
